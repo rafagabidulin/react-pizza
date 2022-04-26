@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button.jsx';
 import Header from './Header.jsx';
 
 function App() {
