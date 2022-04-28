@@ -5,6 +5,7 @@
 
 body {
   background-color: $background;
+  padding: 50px 0;
 }
 
 .wrapper {
@@ -12,7 +13,6 @@ body {
   height: 100%;
   background-color: #fff;
   margin: 0 auto;
-  padding: 50px 0;
   border-radius: 10px;
   max-width: 1400px;
 }
