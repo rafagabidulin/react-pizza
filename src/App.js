@@ -1,10 +1,7 @@
 import React from 'react';
-import { Header, Categories } from './components/index.js';
-import SortPopup from './components/SortPopup.jsx';
+import { Header, Categories, SortPopup } from './components/index.js';
 
 function App() {
-  
-
   return (
     <div className="wrapper">
       <Header />
