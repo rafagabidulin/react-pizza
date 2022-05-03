@@ -1,5 +1,5 @@
-import Home from './Home.js';
-import Cart from './Cart.js';
+import Home from './Home.jsx';
+import Cart from './Cart.jsx';
 
 export {
   Home,
