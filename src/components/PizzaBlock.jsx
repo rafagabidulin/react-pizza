@@ -34,38 +34,29 @@ function PizzaBlock({
               onClick={() => onSelectType(index)}
               className={classNames({
                 active: activeType === index,
-                disabled: !types.includes(index),
+                disabled: !types.includes(index)
               })}
               key={type}
             >
               {type}
             </li>
-          ))}
+          )
         </ul>
         <ul>
-          {avaliableSizes.map((size, index) => (
+          {avaliableSizes.map((size, index) =>
             <li
               onClick={() => onSelectSize(index)}
               className={classNames({
-                active: activeSize === index,
-                disabled: !sizes.includes(size),
+                'active': activeSize === index,
+                'disabled': !sizes.includes(size)
               })}
-              key={size}
-            >
-              {size}
-              {' '}
-              см
-            </li>
-          ))}
+              key={size}>
+              {size} см
+            </li>)}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">
-          от
-          {price}
-          {' '}
-          ₽
-        </div>
+        <div className="pizza-block__price">от {price} ₽</div>
         <div className="button button--outline button--add">
           <svg
             width="12"
@@ -84,7 +75,7 @@ function PizzaBlock({
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 PizzaBlock.propTypes = {
@@ -100,6 +91,6 @@ PizzaBlock.defaultProps = {
   price: 0,
   sizes: [],
   types: [],
-};
+}
 
 export default PizzaBlock;
