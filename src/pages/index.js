@@ -1,7 +1,7 @@
-import Home from './Home.jsx'
-import Cart from './Cart.jsx';
+import Home from './Home.js';
+import Cart from './Cart.js';
 
 export {
   Home,
-  Cart
+  Cart,
 };

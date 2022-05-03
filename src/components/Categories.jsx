@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 // class Categories extends React.Component {
 
@@ -19,9 +19,9 @@ import React from 'react'
 //         <ul>
 //           <li>Все</li>
 //           {items.map((name, index) => (
-//             <li 
-//               className={this.state.activeItem === index ? 'active' : '' } 
-//               onClick={() => this.onSelectItem(index)} 
+//             <li
+//               className={this.state.activeItem === index ? 'active' : '' }
+//               onClick={() => this.onSelectItem(index)}
 //               key={`${name}_${index}`}>
 //               {name}
 //             </li>
@@ -44,23 +44,25 @@ function Categories({ items, onClick }) {
       <div className="categories">
         <ul>
           <li
-            className={activeItem === null ? 'active' : '' }
-            onClick={() => onSelectItem(null)}>
-              Все
+            className={activeItem === null ? 'active' : ''}
+            onClick={() => onSelectItem(null)}
+          >
+            Все
           </li>
-            {items && 
-              items.map((name, index) => (
-            <li 
-              className={activeItem === index ? 'active' : '' } 
-              onClick={() => onSelectItem(index)} 
-              key={`${name}_${index}`}>
-              {name}
-            </li>
-          ))}
+          {items
+              && items.map((name, index) => (
+                <li
+                  className={activeItem === index ? 'active' : ''}
+                  onClick={() => onSelectItem(index)}
+                  key={`${name}_${index}`}
+                >
+                  {name}
+                </li>
+              ))}
         </ul>
-      </div> 
+      </div>
     </div>
-  )
+  );
 }
 
 export default Categories;

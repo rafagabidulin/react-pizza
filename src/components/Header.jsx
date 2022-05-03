@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/img/pizza-logo.svg";
-import Button from "./Button.jsx";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/img/pizza-logo.svg';
+import Button from './Button.jsx';
 
 function Header() {
   return (
     <div className="header">
       <div className="container">
-        <Link to='/'>
+        <Link to="/">
           <div className="header__logo">
             <img width="38" src={logo} alt="Pizza logo" />
             <div>
@@ -17,10 +17,10 @@ function Header() {
           </div>
         </Link>
         <div className="header__cart">
-          <Link to='/cart'>
-            <Button className='button--cart'>
+          <Link to="/cart">
+            <Button className="button--cart">
               <span>520 ₽</span>
-              <div className="button__delimiter"></div>
+              <div className="button__delimiter" />
               <svg
                 width="18"
                 height="18"
@@ -56,7 +56,7 @@ function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Header;

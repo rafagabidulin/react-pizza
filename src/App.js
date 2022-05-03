@@ -17,10 +17,10 @@ function App() {
     <div className="wrapper">
       <Header />
       <div className="content">
-          <Routes>
-            <Route path='/' element={<Home items={pizzas} />} />
-            <Route path='/cart' element={<Cart />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home items={pizzas} />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
       </div>
     </div>
   );
