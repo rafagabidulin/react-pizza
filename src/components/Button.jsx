@@ -6,6 +6,7 @@ function Button({
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       className={classNames('button', className, {
         'button--outline': outline,

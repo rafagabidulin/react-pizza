@@ -36,14 +36,12 @@ function PizzaBlock({
                 active: activeType === index,
                 disabled: !types.includes(index)
               })}
-              key={type}
-            >
+              key={type}>
               {type}
-            </li>
-          )
+            </li>))}
         </ul>
         <ul>
-          {avaliableSizes.map((size, index) =>
+          {avaliableSizes.map((size, index) => (
             <li
               onClick={() => onSelectSize(index)}
               className={classNames({
@@ -52,7 +50,7 @@ function PizzaBlock({
               })}
               key={size}>
               {size} см
-            </li>)}
+            </li>))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
