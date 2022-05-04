@@ -1,8 +1,11 @@
 install: #установка зависимостей
-	npm ci
+		npm ci
+
+link: #создание ссылок
+		npm link
 
 lint: #запуск линтера
-	npx eslint .
+		npx eslint --no-error-on-unmatched-pattern .
 
 lint-fix: #устранение замечаний линтера
-	npx eslint --fix .
+		npx eslint --no-error-on-unmatched-pattern --fix .
