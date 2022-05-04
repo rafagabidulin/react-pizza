@@ -1,8 +1,8 @@
 install: #установка зависимостей
-		npm ci
+	npm ci
 
 lint: #запуск линтера
-		npx eslint .
+	npx eslint .
 
 lint-fix: #устранение замечаний линтера
-		npx eslint --fix .
+	npx eslint --fix .
