@@ -15,12 +15,12 @@ function App() {
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className='wrapper'>
       <Header />
-      <div className="content">
+      <div className='content'>
         <Routes>
-          <Route path="/" element={<Home items={pizzas} />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path='/' element={<Home items={pizzas} />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </div>
     </div>
