@@ -5,17 +5,13 @@ import SortPopup from '../components/SortPopup.jsx';
 import PizzaBlock from '../components/PizzaBlock.jsx';
 
 function Home() {
-  const { items } = useSelector(({ pizzas }) => {
-    return {
-      items: pizzas.items,
-    };
-  });
+  const items = useSelector(({ pizzas }) => pizzas.items);
 
   return (
     <div className='container'>
       <div className='content__top'>
         <Categories
-          onClick={(name) => console.log(name)}
+          onClickItem={(name) => console.log(name)}
           items={['Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые']}
         />
         <SortPopup
