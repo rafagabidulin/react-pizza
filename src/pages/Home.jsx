@@ -1,9 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Categories from '../components/Categories.jsx';
 import SortPopup from '../components/SortPopup.jsx';
 import PizzaBlock from '../components/PizzaBlock.jsx';
 
-function Home({ items }) {
+function Home() {
+  const { items } = useSelector(({ pizzas, filters }) => {
+    return {
+      items: pizzas.items,
+      sortBy: filters.sortBy,
+    };
+  });
+
   return (
     <div className='container'>
       <div className='content__top'>
@@ -21,9 +29,7 @@ function Home({ items }) {
       </div>
       <h2 className='content__title'>Все пиццы</h2>
       <div className='content__items'>
-        {items.map((obj) => (
-          <PizzaBlock key={obj.id} {...obj} />
-        ))}
+        {items && items.map((obj) => <PizzaBlock key={obj.id} {...obj} />)}
       </div>
     </div>
   );
