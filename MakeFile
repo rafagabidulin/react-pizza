@@ -1,5 +1,5 @@
 install: #установка зависимостей
-		npm ci
+		npm install
 
 link: #создание ссылок
 		npm link
