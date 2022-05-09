@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm install
-      - run: make lint
+      - run: npx eslint --no-error-on-unmatched-pattern .
