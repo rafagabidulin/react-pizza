@@ -5,10 +5,9 @@ import SortPopup from '../components/SortPopup.jsx';
 import PizzaBlock from '../components/PizzaBlock.jsx';
 
 function Home() {
-  const { items } = useSelector(({ pizzas, filters }) => {
+  const { items } = useSelector(({ pizzas }) => {
     return {
       items: pizzas.items,
-      sortBy: filters.sortBy,
     };
   });
 
