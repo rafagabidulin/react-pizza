@@ -8,12 +8,11 @@ import setPizzas from './redux/actions/pizzas.js';
 import Header from './components/Header.jsx';
 import Home from './pages/Home.jsx';
 import Cart from './pages/Cart.jsx';
-import store from './redux/store.js';
 
 class App extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:3000/db.json').then(({ data }) => {
-      store.dispatch(setPizzas(data.pizzas));
+      this.props.setPizzas(data.pizzas);
     });
   }
 
@@ -32,10 +31,14 @@ class App extends React.Component {
   }
 }
 
+const mapDispatchToProps = {
+  setPizzas,
+};
+
 const mapStateToProps = (state) => {
   return {
     items: state.pizzas.items,
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
