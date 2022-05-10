@@ -4,7 +4,7 @@ import { fetchPizzas } from '../redux/actions/pizzas.js';
 import Categories from '../components/Categories.jsx';
 import SortPopup from '../components/SortPopup.jsx';
 import PizzaBlock from '../components/PizzaBlock/PizzaBlock.jsx';
-import { setCategory } from '../redux/actions/filters.js';
+import { setCategory, sortBy } from '../redux/actions/filters.js';
 import PizzaLoadingBlock from '../components/PizzaBlock/PizzaLoadingBlock.jsx';
 
 const categoryNames = [
@@ -46,7 +46,7 @@ function Home() {
           onClickCategory={onSelectCategory}
           items={categoryNames}
         />
-        <SortPopup items={sortItems} />
+        <SortPopup activeSortType={sortBy} items={sortItems} />
       </div>
       <h2 className='content__title'>Все пиццы</h2>
       <div className='content__items'>
