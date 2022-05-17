@@ -42,7 +42,7 @@ function Home() {
     (type) => {
       dispatch(setSortBy(type));
     },
-    [category]
+    [sortBy]
   );
 
   return (
