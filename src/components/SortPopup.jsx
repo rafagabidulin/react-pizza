@@ -18,6 +18,7 @@ const SortPopup = React.memo(function SortPopup({
     const path =
       event.path ||
       (event.composedPath && event.composedPath()) ||
+      // eslint-disable-next-line no-undef
       composedPath(event.target);
     if (!path.includes(sortRef.current)) {
       setVisiblePopup(false);
