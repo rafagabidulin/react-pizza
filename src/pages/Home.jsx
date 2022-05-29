@@ -63,7 +63,12 @@ function Home() {
       <div className='content__items'>
         {isLoaded
           ? items.map((obj) => (
-              <PizzaBlock key={obj.id} isLoading={true} {...obj} />
+              <PizzaBlock
+                onClickAddPizza={(obj) => console.log(obj)}
+                key={obj.id}
+                isLoading={true}
+                {...obj}
+              />
             ))
           : Array(12)
               .fill(0)
