@@ -11,7 +11,7 @@ const cart = (state = initialState, action) => {
     case 'ADD_PIZZA_TO_CART': {
       const currentPizzaItems = !state.items[action.payload.id]
         ? [action.payload]
-        : [...state.items[action.payload.id], action.payload];
+        : [...state.items[action.payload.id].items, action.payload];
 
       const newItems = {
         ...state.items,
@@ -21,7 +21,8 @@ const cart = (state = initialState, action) => {
         },
       };
 
-      const allPizzas = [].concat.apply([], Object.values(newItems));
+      const items = Object.values(newItems).map((obj) => obj.items);
+      const allPizzas = [].concat.apply([], items);
       const totalPrice = getTotalPrice(allPizzas);
 
       return {
