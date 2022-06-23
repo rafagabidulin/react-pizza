@@ -1,9 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import Button from '../components/Button';
 import CartItem from '../components/CartItem';
-import { clearCart } from '../redux/actions/cart';
+import {
+  clearCart,
+  removeCartItem,
+  plusCartItem,
+  minusCartItem,
+} from '../redux/actions/cart';
 import cartEmptyImage from '../assets/img/empty-cart.png';
 
 function Cart() {
@@ -18,6 +23,24 @@ function Cart() {
     if (window.confirm('Вы действительно хотите очистить корзину?')) {
       dispatch(clearCart());
     }
+  };
+
+  const onRemoveCartItem = (id) => {
+    if (window.confirm('Вы действительно хотите удалить пиццу?')) {
+      dispatch(removeCartItem(id));
+    }
+  };
+
+  const onPlusItem = (id) => {
+    dispatch(plusCartItem(id));
+  };
+
+  const onMinusItem = (id) => {
+    dispatch(minusCartItem(id));
+  };
+
+  const onClickOrder = () => {
+    console.log('Ваш заказ: ', items);
   };
 
   return (
@@ -102,12 +125,16 @@ function Cart() {
             <div className='content__items'>
               {addedPizzas.map((obj) => (
                 <CartItem
+                  id={obj.id}
                   name={obj.name}
                   type={obj.type}
                   size={obj.size}
                   key={obj.id}
                   totalPrice={items[obj.id].totalPrice}
                   totalCount={items[obj.id].items.length}
+                  onRemove={onRemoveCartItem}
+                  onMinus={onMinusItem}
+                  onPlus={onPlusItem}
                 />
               ))}
             </div>
@@ -143,18 +170,20 @@ function Cart() {
                     />
                   </svg>
 
-                  <span>Вернуться назад</span>
+                  <Link to='/'>
+                    <span>Вернуться назад</span>
+                  </Link>
                 </a>
-                <div className='button pay-btn'>
+                <Button onClick={onClickOrder} className='pay-btn'>
                   <span>Оплатить сейчас</span>
-                </div>
+                </Button>
               </div>
             </div>
           </div>
         ) : (
           <div className='cart cart--empty'>
             <h2>
-              Корзина пустая <icon>😕</icon>
+              Корзина пустая <i>😕</i>
             </h2>
             <p>
               Вероятней всего, вы не заказывали ещё пиццу.
