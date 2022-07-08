@@ -11,5 +11,10 @@
       'babelOptions': { 'presets': ['@babel/preset-react'] },
     },
   'plugins': ['react', 'prettier'],
-  'rules': { 'prettier/prettier': 'error', 'react/prop-types': 0 },
+  'rules':
+    {
+      'prettier/prettier': 'error',
+      { 'endOfLine': 'auto' },
+      'react/prop-types': 0,
+    },
 }
