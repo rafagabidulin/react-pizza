@@ -35,6 +35,7 @@ const Categories = React.memo(function Categories({
 Categories.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClickCategory: PropTypes.func,
+  activeCategory: PropTypes.any,
 };
 
 Categories.defaultProps = {

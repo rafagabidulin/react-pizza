@@ -97,6 +97,7 @@ function PizzaBlock({
 }
 
 PizzaBlock.propTypes = {
+  id: PropTypes.any,
   name: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
